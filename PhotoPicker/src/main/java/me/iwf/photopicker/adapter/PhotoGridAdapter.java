@@ -8,8 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
-import com.bumptech.glide.request.RequestOptions;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -105,16 +106,15 @@ public class PhotoGridAdapter extends SelectableAdapter<PhotoGridAdapter.PhotoVi
       boolean canLoadImage = AndroidLifecycleUtils.canLoadImage(holder.ivPhoto.getContext());
 
       if (canLoadImage) {
-        final RequestOptions options = new RequestOptions();
-        options.centerCrop()
-            .dontAnimate()
-            .override(imageSize, imageSize)
-            .placeholder(R.drawable.__picker_ic_photo_black_48dp)
-            .error(R.drawable.__picker_ic_broken_image_black_48dp);
 
-        glide.setDefaultRequestOptions(options)
-                .load(new File(photo.getPath()))
+
+        glide.load(new File(photo.getPath()))
                 .thumbnail(0.5f)
+                .error(R.drawable.__picker_ic_broken_image_black_48dp)
+                .placeholder(R.drawable.__picker_ic_photo_black_48dp)
+                .override(imageSize, imageSize)
+                .centerCrop()
+                .dontAnimate()
                 .into(holder.ivPhoto);
       }
 
@@ -218,7 +218,7 @@ public class PhotoGridAdapter extends SelectableAdapter<PhotoGridAdapter.PhotoVi
   }
 
   @Override public void onViewRecycled(PhotoViewHolder holder) {
-    glide.clear(holder.ivPhoto);
+    Glide.clear(holder.ivPhoto);
     super.onViewRecycled(holder);
   }
 }
