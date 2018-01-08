@@ -63,9 +63,9 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
         Glide.with(mContext)
                 .load(uri)
                 .thumbnail(0.1f)
-                .centerCrop()
-                .placeholder(R.drawable.__picker_ic_photo_black_48dp)
-                .error(R.drawable.__picker_ic_broken_image_black_48dp)
+//                .centerCrop()
+//                .placeholder(R.drawable.__picker_ic_photo_black_48dp)
+//                .error(R.drawable.__picker_ic_broken_image_black_48dp)
                 .into(holder.ivPhoto);
       }
     }
