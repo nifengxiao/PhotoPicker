@@ -54,11 +54,11 @@ public class PhotoPagerAdapter extends PagerAdapter {
 
             mGlide.load(uri)
                     .thumbnail(0.1f)
-                    .dontAnimate()
-                    .dontTransform()
-                    .override(800, 800)
-                    .placeholder(R.drawable.__picker_ic_photo_black_48dp)
-                    .error(R.drawable.__picker_ic_broken_image_black_48dp)
+//                    .dontAnimate()
+//                    .dontTransform()
+//                    .override(800, 800)
+//                    .placeholder(R.drawable.__picker_ic_photo_black_48dp)
+//                    .error(R.drawable.__picker_ic_broken_image_black_48dp)
                     .into(imageView);
         }
 
@@ -94,7 +94,7 @@ public class PhotoPagerAdapter extends PagerAdapter {
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((View) object);
-        Glide.clear((View) object);
+//        Glide.clear((View) object);
     }
 
     @Override

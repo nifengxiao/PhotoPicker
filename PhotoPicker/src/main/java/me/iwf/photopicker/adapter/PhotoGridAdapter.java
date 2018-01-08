@@ -110,11 +110,11 @@ public class PhotoGridAdapter extends SelectableAdapter<PhotoGridAdapter.PhotoVi
 
         glide.load(new File(photo.getPath()))
                 .thumbnail(0.5f)
-                .error(R.drawable.__picker_ic_broken_image_black_48dp)
-                .placeholder(R.drawable.__picker_ic_photo_black_48dp)
-                .override(imageSize, imageSize)
-                .centerCrop()
-                .dontAnimate()
+//                .error(R.drawable.__picker_ic_broken_image_black_48dp)
+//                .placeholder(R.drawable.__picker_ic_photo_black_48dp)
+//                .override(imageSize, imageSize)
+//                .centerCrop()
+//                .dontAnimate()
                 .into(holder.ivPhoto);
       }
 
@@ -218,7 +218,7 @@ public class PhotoGridAdapter extends SelectableAdapter<PhotoGridAdapter.PhotoVi
   }
 
   @Override public void onViewRecycled(PhotoViewHolder holder) {
-    Glide.clear(holder.ivPhoto);
+//    Glide.clear(holder.ivPhoto);
     super.onViewRecycled(holder);
   }
 }
