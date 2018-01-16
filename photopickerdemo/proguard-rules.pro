@@ -22,6 +22,7 @@
   **[] $VALUES;
   public *;
 }
+-keep resource xml elements manifest/application/meta-data@value=GlideModule
 
 # nineoldandroids
 -keep interface com.nineoldandroids.view.** { *; }
