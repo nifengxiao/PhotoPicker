@@ -35,9 +35,6 @@ android {
         targetCompatibility JavaVersion.VERSION_1_7
     }
 }
-ext {
-    supportLibVersion = "27.0.2"
-}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
