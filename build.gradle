@@ -16,7 +16,7 @@ ext {
     minSdkVersion = 14
     targetSdkVersion = 26
     supportLibVersion = '27.0.2'
-    glideVersion = '4.5.0'
+    glideVersion = '4.1.1'
 }
 
 allprojects {

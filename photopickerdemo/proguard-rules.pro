@@ -17,13 +17,11 @@
 #}
 # Glide
 -keep public class * implements com.bumptech.glide.module.GlideModule
--keep public class * extends com.bumptech.glide.module.AppGlideModule
+-keep public class * extends com.bumptech.glide.AppGlideModule
 -keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
-  **[] $VALUES;
-  public *;
-}
--keep resource xml elements manifest/application/meta-data@value=GlideModule
-
+        **[] $VALUES;
+        public *;
+    }
 # nineoldandroids
 -keep interface com.nineoldandroids.view.** { *; }
 -dontwarn com.nineoldandroids.**
